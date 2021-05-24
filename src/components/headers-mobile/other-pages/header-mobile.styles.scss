@@ -1,0 +1,29 @@
+.header-mobile{
+    margin: none;
+    background-color: #EAE7DC;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    min-height: 10vh;
+    z-index: 999;
+
+    .header-mobile-menutoggler{
+        background: transparent;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        margin-left: auto;
+        margin-right: 25px;
+        cursor: pointer;
+
+        @media screen and (max-width:  590px) {
+            margin-right: 5px;
+        }
+    }
+
+}
+
+.header-mobile-homepage{
+    background: transparent;
+    position: relative;
+}

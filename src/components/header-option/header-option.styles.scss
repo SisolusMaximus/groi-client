@@ -1,0 +1,15 @@
+.header-option{
+    margin: 0 12px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #a0a09f;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.header-option:hover{
+    color: #E85A4F;
+
+}

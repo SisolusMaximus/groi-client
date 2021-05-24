@@ -1,0 +1,25 @@
+
+    .header-logo{
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+        font-family: 'Monoton', cursive;
+        font-size:40px;
+        margin: auto 0;
+        margin-left: 20px;
+        cursor: pointer;
+        color: #8E8D8A;
+        user-select: none; /* supported by Chrome and Opera */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+
+        @media screen and (max-width:  590px) {
+            font-size: 30px;
+            margin-left:5px;
+            padding: 0px;
+        }
+    }
+
+    .header-logo:hover{
+        color: #E85A4F;
+    }

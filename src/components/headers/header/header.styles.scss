@@ -1,0 +1,32 @@
+.header{
+    margin: none;;
+    background-color: #EAE7DC;
+    display: flex;
+    position:fixed;
+    width: 100vw;
+    height: 10vh;
+    z-index: 999;
+
+    .header-options{
+        font-family: 'Itim', cursive;
+        margin: auto 30px;
+        display: flex;
+        align-self: start;
+        justify-content: space-evenly;
+    }
+
+    
+
+    .user-section{
+        font-family: 'Itim', cursive;
+        margin: auto auto;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+}
+
+.header-homepage{
+    background-color: transparent;
+    position: relative;
+}

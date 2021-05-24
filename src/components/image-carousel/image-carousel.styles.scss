@@ -1,0 +1,74 @@
+.image-carousel{
+    width: 500px;
+    height: 500px;
+    margin: 15px auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: background-image .3s ease-in-out;
+    z-index: 0;
+
+    @media screen and (max-width: 800px) {
+        width: 325px;
+        height: 325px;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 200px;
+        height: 200px;
+    }
+
+    .image-carousel-button{
+        background: transparent;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        font-size: 30px;
+        opacity: 0.5;
+
+        &:disabled{
+            opacity: 0;
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+        }
+
+        &:hover{
+            background-color: rgb(243, 243, 243);
+        }
+
+    }
+    .previous{
+        position: absolute;
+        left: -80px;
+        top: 210px;
+
+        @media screen and (max-width: 800px) {
+            top: 140px;
+            left: -40px;
+        }
+    
+        @media screen and (max-width: 450px) {
+            top: 70px;
+        }
+    }
+    .next{
+        position: absolute;
+        right: -80px;
+        top: 210px;
+
+        @media screen and (max-width: 800px) {
+            top: 140px;
+            right: -40px;
+
+        }
+    
+        @media screen and (max-width: 450px) {
+            top: 70px;
+        }
+    }
+}

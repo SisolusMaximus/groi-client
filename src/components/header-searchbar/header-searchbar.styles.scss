@@ -1,0 +1,64 @@
+.searchbar-container{
+    margin: auto auto ;
+    border: solid 2px #8E8D8A;
+    border-radius: 20px;
+
+    @media screen and (max-width:  420px) {
+        font-size: 16px;
+        margin: auto auto ;
+
+    }
+
+    
+
+    .searchbar-input{
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+        font-family: 'Itim', cursive;    
+        font-size: 22px;
+        width: 20vw;
+        padding: 5px 8px;
+        margin-bottom: 3px;
+        color: #8E8D8A;
+
+        @media screen and (max-width:  1264px) {
+            font-size: 16px;
+            width: 50vw;
+        }
+
+        @media screen and (max-width:  590px) {
+            font-size: 16px;
+            width: 35vw;
+        }
+
+        @media screen and (max-width:  420px) {
+            font-size: 16px;
+            width: 30vw;
+        }
+    }
+
+    .searchbar-input::placeholder{
+        text-transform: uppercase;
+    }
+
+    .searchbar-input:focus{
+        outline: none !important;
+    }
+
+    .searchbar-button{
+        font-size: 22px;
+        border-radius: 5px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        height: 24px;
+        padding-top: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+
+        @media screen and (max-width:  420px) {
+            height: 16px;
+            font-size: 16px;
+        }
+    }
+   
+}

@@ -1,0 +1,40 @@
+.message-notification{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    position: absolute;
+    left:20vw;
+    min-width: 60vw;
+    max-width: 40vh;
+    padding-top: 12vh;
+    padding-bottom: 2vh;
+    background-color: rgb(143, 194, 252);
+    opacity: 0.7;
+    justify-content: center;
+    align-content: center;
+    z-index: 998;
+    border-radius: 5px;
+
+
+    &:hover{
+        opacity: 1;
+    }
+
+
+    .message-notification-text{
+        margin-top: 3px;
+        margin-left: 5px;
+    }
+
+    .message-notification-button{
+        display: block;
+        font-size: 28px;
+        position: absolute;
+        right: 3vh;
+        bottom: 2vh;
+        cursor: pointer;
+    }
+}
+
+.homepage-msg{
+    padding-top: 2vh;
+}

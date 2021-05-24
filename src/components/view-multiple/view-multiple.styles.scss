@@ -1,0 +1,21 @@
+.view-multiple-container{
+    margin-top: 5vh;
+    padding: 20px 50px;
+    background-color: white;
+    width: 80vw;
+    margin-bottom: 30px;
+
+
+    @media screen and (max-width: 1264px) {
+        width: 80vw;
+        padding: 20px 30px;
+
+    }
+    @media screen and (max-width: 500px) {
+        width: 95vw;
+        padding: 20px 0px;
+
+    }
+
+    
+}

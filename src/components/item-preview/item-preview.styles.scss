@@ -1,0 +1,119 @@
+.item-preview{
+    width: 80%;
+    min-height: 60vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 700px) {
+        width: 95%;
+    }
+
+    .item-preview-title{
+        font-family: 'Roboto', sans-serif;
+        font-size: 22px;
+        padding: 15px 0;
+        margin: 0 30px;
+        margin-top: 10px;
+        border-bottom: 1px solid #d3cdcd;
+
+        @media screen and (max-width: 700px) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 14px;
+        }
+    }
+    .item-preview-subtitle{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        padding-top: 10px;
+
+        @media screen and (max-width: 700px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 10px;
+        }
+    }
+
+    .item-preview-details{
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        padding: 20px 0;
+        margin: 0 30px;
+        margin-top: 10px;
+        border-top: 1px solid #d3cdcd;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+        @media screen and (max-width:850px) {
+            flex-direction: column;
+        }
+
+        .item-previev-details-section{
+            padding: 15px 0;
+            .item-preview-details-price{
+                margin: 0;
+                padding-bottom: 10px;
+                font-size: 22px;
+            }
+            .item-preview-details-condition{
+                margin: 0;
+                padding-bottom: 10px;
+                font-size: 16px;
+            }
+        }
+    
+        .item-preview-details-location{
+            display: flex;
+            border-left: 1px solid #d3cdcd;
+            padding-left: 20px;
+            padding-top: 15px;
+
+
+            @media screen and (max-width:850px) {
+                margin-top: 20px;
+                border-left: none;
+                border-top: 1px solid #d3cdcd;
+                padding-left: 0;;
+            }
+
+            @media screen and (max-width:500px) {
+               flex-direction: column;
+            }
+
+
+
+            .item-preview-details-location-text{
+                font-size: 26px;
+
+                p{
+                    margin: 0;
+                    margin-bottom: 14px;
+                }
+
+                .item-preview-details-location-text-data{
+                    font-size: 16px;
+        
+                    p{
+                        margin: 0;
+                        margin: 6px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    .item-preview-description{
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        padding: 20px;
+        border-top: 1px solid #d3cdcd;
+        border-bottom: 1px solid #d3cdcd;
+    }
+}

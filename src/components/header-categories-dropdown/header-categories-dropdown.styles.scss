@@ -1,0 +1,22 @@
+.header-categories-dropdown{
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #474746;
+    position: absolute;
+    border-radius: 12px;
+    height: 50vh;
+    left: 17vw;
+    top: 10vh;
+    max-width: 280px;
+
+}
+
+.mobile{
+    left: unset;
+    right: 10px;
+    top: 10vh;
+    
+
+}

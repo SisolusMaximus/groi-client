@@ -1,0 +1,54 @@
+.signin-page{
+    min-width: 95vw;
+    min-height: 91vh;
+    height: auto;
+    background-color: #EAE7DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:70px;
+
+    
+
+
+    .signin-page-titlebox{
+
+        @media screen and (max-width: 800px){
+            max-width: 500px;
+        }
+
+        @media screen and (max-width: 600px){
+            max-width: 400px;
+        }
+        
+        @media screen and (max-width: 500px){
+            max-width: 350px;
+        }
+
+        @media screen and (max-width: 400px){
+            max-width: 280px;
+        }
+    
+
+        .signin-page-titlebox-title{
+            display: block;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            color: #7c7c7c;
+            overflow-wrap: normal;
+
+        }
+
+        .signin-page-titlebox-descriptor{
+            display: block;
+            margin-bottom: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #7c7c7c;
+        }
+    }
+
+    
+}
