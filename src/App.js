@@ -1,13 +1,13 @@
 import './App.css';
 import React, {useEffect} from "react";
 import {
-  BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 import {connect} from 'react-redux'
 import {setCurrentUser} from "./redux/user/user.actions"
+import { setCurrentMessage } from './redux/message/message.actions';
 
 
 //components
@@ -26,58 +26,50 @@ import FilterResultsPage from "./pages/filter-page/filter-page.component.jsx"
 import FailurePage from "./pages/failure-page/failure-page.component.jsx"
 import RegisterPage from "./pages/register-page/register-page.component.jsx"
 import SigninPage from "./pages/sign-in/sign-in.component.jsx"
+import ProfilePage from "./pages/profile-page/profile-page.component.jsx"
+import EditProfilePage from "./pages/edit-profile-page/edit-profile-page.component.jsx"
+import ResetPasswordPage from "./pages/reset-password-page/reset-password-page.component.jsx"
+import DeleteProfilePage from "./pages/delete-profile-page/delete-profile-page.component.jsx"
+import ForgotPasswordPage from "./pages/forgot-password-page/forgot-password-page.component.jsx"
 
-function App({setCurrentUser}) {
+import {fetchUserApp} from "./App.fetch"
 
-  
+function App({setCurrentUser, setCurrentMessage}) {
+
   useEffect(()=>{
-    console.log("triggered")
     if(window.localStorage.getItem("token")){
-      console.log("triggered inside")
-      setCurrentUser(window.localStorage.getItem("userId"))
+        fetchUserApp(setCurrentUser, setCurrentMessage)
     }
   })
 
   return (
-    <Router>
+      <>
       <HeaderContainer/>
       <MessageNotification/>
       <Switch>
-        <Route exact path="/">
-          <Homepage/>
-        </Route>
-        <Route exact path="/new">
-            <NewItemPage/>
-        </Route>
-        <Route exact path="/all">
-            <ViewAllPage/>
-        </Route>
-        <Route exact path="/failure">
-            <FailurePage/>
-        </Route>
-        <Route exact path="/register">
-            <RegisterPage/>
-        </Route>
-        <Route exact path="/signin">
-            <SigninPage/>
-        </Route>
-        <Route path="/search_results:query">
-            <SearchResultPage/>
-        </Route>
-        <Route path="/filter/:typeOfQuery?/:query?">
-          <FilterResultsPage/>
-        </Route>
-        <Route path="/:id">
-            <ShowPage/>
-        </Route>
+        <Route exact path="/" component={Homepage}/>
+        <Route exact path="/new" component={NewItemPage}/>
+        <Route exact path="/all" component={ViewAllPage}/>
+        <Route exact path="/failure" component={FailurePage}/>
+        <Route exact path="/register" component={RegisterPage}/>
+        <Route exact path="/signin" component={SigninPage}/>
+        <Route exact path="/profile" component={ProfilePage}/>
+        <Route exact path="/profile/edit" component={EditProfilePage}/>
+        <Route exact path="/profile/resetPassword" component={ResetPasswordPage}/>
+        <Route exact path="/profile/delete" component={DeleteProfilePage}/>
+        <Route exact path="/profile/forgotPassword" component={ForgotPasswordPage}/>
+        <Route path="/search_results:query" component={SearchResultPage}/>
+        <Route path="/filter/:typeOfQuery?/:query?" component={FilterResultsPage}/>
+        <Route path="/:id" component={ShowPage}/>
       </Switch>
       <Footer/>
-    </Router>
+      </>
   );
 }
 
 const mapDispatchToProps = dispatch =>({
-  setCurrentUser: (user) => dispatch(setCurrentUser({user})),
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  setCurrentMessage: (message) => dispatch(setCurrentMessage(message))
 })
 
 

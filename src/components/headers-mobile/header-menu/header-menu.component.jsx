@@ -2,12 +2,13 @@ import "./header-menu.styles.scss"
 import HeaderOption from "../../header-option/header-option.component"
 import { withRouter } from "react-router-dom"
 
-
 import {createStructuredSelector} from 'reselect'
 import {connect} from 'react-redux'
 
 import {selectCurrentUser} from "../../../redux/user/user.selectors"
 import {setCurrentUser} from "../../../redux/user/user.actions.js"
+
+import {signoutFetch} from "../../headers/header/header.fetch.js"
 
 const HeaderMenu = ({history, toggleMenu, toggleCategories, user, setCurrentUser}) =>{
 
@@ -17,10 +18,8 @@ const HeaderMenu = ({history, toggleMenu, toggleCategories, user, setCurrentUser
     }
 
     const handleSignOut = () =>{
-        toggleMenu()
-        setCurrentUser(null)
-        window.localStorage.removeItem("token")
-        window.localStorage.removeItem("userId")
+        signoutFetch(history, setCurrentUser)
+        
     }
 
     return (
@@ -35,6 +34,7 @@ const HeaderMenu = ({history, toggleMenu, toggleCategories, user, setCurrentUser
                     </div>
                     :
                     <div>
+                        <HeaderOption onClick={() =>{handleRouteChange("/profile")}}>PROFILE</HeaderOption>
                         <HeaderOption onClick={()=>{handleSignOut()}} >SIGN OUT</HeaderOption>
                     </div>
                 }

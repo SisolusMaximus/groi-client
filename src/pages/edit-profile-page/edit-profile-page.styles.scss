@@ -1,6 +1,6 @@
-.signin-page{
+.edit-profile-page{
     min-width: 95vw;
-    min-height: 91vh;
+    min-height: 90vh;
     height: auto;
     background-color: #EAE7DC;
     display: flex;
@@ -12,7 +12,7 @@
     
 
 
-    .signin-page-titlebox{
+    .edit-profile-page-titlebox{
 
         @media screen and (max-width: 800px){
             max-width: 500px;
@@ -31,7 +31,7 @@
         }
     
 
-        .signin-page-titlebox-title{
+        .edit-profile-page-titlebox-title{
             display: block;
             margin-bottom: 20px;
             font-family: 'Roboto', sans-serif;
@@ -41,7 +41,7 @@
 
         }
 
-        .signin-page-titlebox-descriptor{
+        .edit-profile-page-titlebox-descriptor{
             display: block;
             margin-bottom: 6px;
             font-family: 'Roboto', sans-serif;
@@ -50,14 +50,5 @@
         }
     }
 
-    .signin-page-forgot{
-        font-family: 'Roboto', sans-serif;
-        text-decoration: underline;
-        cursor: pointer;
-
-        &:hover{
-            color: #E85A4F;
-        }
-    }
     
 }

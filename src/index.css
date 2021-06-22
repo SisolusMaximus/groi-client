@@ -11,3 +11,7 @@ body{
 #root{
     height: fit-content;
 }
+
+.tox-notification{
+    display: none !important
+}

@@ -22,7 +22,7 @@ const HeaderCategoriesDropdown = ({
             closeCategories();
             closeMenu();
         }
-        history.replace(`/filter/category/${query}`)
+        history.push(`/filter/category/${query}`)
     }
 
     return (

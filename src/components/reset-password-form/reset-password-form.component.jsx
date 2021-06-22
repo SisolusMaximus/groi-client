@@ -1,37 +1,40 @@
 import {useState, useEffect} from "react"
-import {withRouter} from "react-router-dom"
+import {withRouter, useLocation} from "react-router-dom"
 import {connect} from 'react-redux'
-import {setCurrentUser} from "../../redux/user/user.actions"
 import {setCurrentMessage} from "../../redux/message/message.actions"
 
-import "./register-form.styles.scss"
+import "./reset-password-form.styles.scss"
 
 import Button from "../button/button.compontent"
 import FormInput from "../form-input/form-input.component"
 import RegisterFormPassword from "../register-form-password/register-form-password.component"
 
 import {
-    usernameValidator,
     passwordValidator,
-    emailValidator
+    verifictionCodeValidator
 }
-from "./register-form.validators"
+from "./reset-password-form.validators"
 
-import {registerFetch} from "./register-form.fetch"
+import {resetPasswordFetch} from "./reset-password-form.fetch.js"   
 
 
-const RegisterForm = ({history, setCurrentUser, setCurrentMessage}) =>{
+const ResetPasswordForm = ({history, setCurrentMessage}) =>{
 
     const [validationObject, setValidationObject] = useState({
         1: false,
         2: false,
-        4: false,
-        5: false,
-        values : ["", "", "", "", ""]
+        values : ["", "", ""]
     })
     
-
     const [disableButton, setDisableButton] = useState(true)
+
+    const prevState = useLocation().state
+
+    let username = undefined
+
+    if (prevState){
+        username = prevState.username
+    }
 
     useEffect(() => {
         if (Object.values(validationObject).includes(false)){
@@ -44,19 +47,20 @@ const RegisterForm = ({history, setCurrentUser, setCurrentMessage}) =>{
 
     const submit = () =>{
         const formData = new FormData();
-        formData.append("username", validationObject.values[1])
+        formData.append("validationCode", validationObject.values[1])
         formData.append("password", validationObject.values[2])
-        formData.append("email", validationObject.values[4])
-        formData.append("phone", validationObject.values[5])
+        if(username){
+            formData.append("username", username)
+        }
 
-        registerFetch(formData, history, setCurrentUser, setCurrentMessage)
+        resetPasswordFetch(formData, history, setCurrentMessage)
     }
 
    return (
-        <div className={"register-page-form"}>
+        <div className={"reset-password-form"}>
             <FormInput 
-                name={"Username"} 
-                validator={usernameValidator} 
+                name={"Verification code"} 
+                validator={verifictionCodeValidator} 
                 type={"text"}
                 numOfField={1}
                 setValidationObject={setValidationObject}
@@ -68,22 +72,6 @@ const RegisterForm = ({history, setCurrentUser, setCurrentMessage}) =>{
                 setValidationObject={setValidationObject}
                 validationObject={validationObject}
             />
-            <FormInput 
-                name={"Email"} 
-                validator={emailValidator} 
-                type={"email"}
-                numOfField={4}
-                setValidationObject={setValidationObject}
-                validationObject={validationObject}
-            />
-            <FormInput 
-                name={"Phone"} 
-                validator={usernameValidator} 
-                type={"text"}
-                numOfField={5} 
-                setValidationObject={setValidationObject}
-                validationObject={validationObject}
-            />
             <Button onClick={submit} disabled={disableButton} color={"dark"}>Submit</Button>
         </div>
     )
@@ -91,9 +79,8 @@ const RegisterForm = ({history, setCurrentUser, setCurrentMessage}) =>{
 
 
 const mapDispatchToProps = dispatch =>({
-    setCurrentUser: (user) => dispatch(setCurrentUser(user)),
     setCurrentMessage: (message) => dispatch(setCurrentMessage(message))
 })
 
 
-export default connect(null, mapDispatchToProps)(withRouter(RegisterForm));
+export default connect(null, mapDispatchToProps)(withRouter(ResetPasswordForm));

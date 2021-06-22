@@ -40,6 +40,7 @@ const FormSelect= ({
                     onChange={(e) => {validateForm(e)}}
                     {...props}
                 >
+                <option value="" disabled selected>Select your option</option>
                 { optionsValues.map( (entry) => (<option key={entry} value={entry}>{entry}</option>))}
                 </select>
         </div>

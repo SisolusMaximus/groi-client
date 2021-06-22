@@ -2,11 +2,13 @@ import {useState, useEffect} from "react"
 import {withRouter} from "react-router-dom"
 
 import "./new-item-form.styles.scss"
+import {newItemFetch} from "./new-item-form.fetch"
 
 import FormEditor from "../form-editor/form-editor.component"
 import Button from "../button/button.compontent"
 import FormInput from "../form-input/form-input.component"
 import FormSelect from "../form-select/form-select.component"
+import Spinner from  "../../components/spinner/spinner.component"
 
 import {nameValidator
     , priceValidator
@@ -17,9 +19,11 @@ import {nameValidator
 from "../../components/new-item-form/new-item.validators"
 
 
-import {api_url, categories} from "../../variables"
+import {categories} from "../../variables"
+import { setCurrentMessage } from "../../redux/message/message.actions"
+import { connect } from "react-redux"
 
-const NewItemForm = ({history}) =>{
+const NewItemForm = ({history, setCurrentMessage}) =>{
 
     const [validationObject, setValidationObject] = useState({
         1: false,
@@ -37,6 +41,7 @@ const NewItemForm = ({history}) =>{
     })
 
     const [disableButton, setDisableButton] = useState(true)
+    const [isPending, setIsPending] = useState(false)
 
     useEffect(() => {
         if (Object.values(validationObject).includes(false)){
@@ -48,6 +53,7 @@ const NewItemForm = ({history}) =>{
     }, [validationObject])
 
     const submit = () =>{
+        setIsPending(true)
         const formData = new FormData();
         formData.append("name", validationObject.values[1])
         formData.append("price", validationObject.values[2])
@@ -64,23 +70,12 @@ const NewItemForm = ({history}) =>{
             formData.append("images", validationObject.values[8][i])
         }
         
-        fetch(
-			`${api_url}/new`,
-			{
-				method: 'POST',
-				body: formData,
-			}
-		)
-			.then((response) => response.json())
-			.then((result) => {
-				history.replace(`/${result.data._id}`)
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
+        newItemFetch(formData, history, setCurrentMessage)
     }
 
    return (
+       <>
+       {isPending? <Spinner/>:
         <div className={"new-item-page-form"}>
             <FormInput 
                 name={"Name of item"} 
@@ -172,7 +167,14 @@ const NewItemForm = ({history}) =>{
             />
             <Button onClick={submit} disabled={disableButton} color={"dark"}>Submit</Button>
         </div>
+       }
+        </>
+    
     )
 }
 
-export default withRouter(NewItemForm);
+const mapDispatchToProps = dispatch =>({
+    setCurrentMessage: (message) => dispatch(setCurrentMessage(message))
+})
+
+export default connect(null, mapDispatchToProps)(withRouter(NewItemForm));

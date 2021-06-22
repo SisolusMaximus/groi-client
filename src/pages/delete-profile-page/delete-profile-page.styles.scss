@@ -1,18 +1,26 @@
-.signin-page{
-    min-width: 95vw;
-    min-height: 91vh;
-    height: auto;
+.delete-profile-page{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
     background-color: #EAE7DC;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top:70px;
 
-    
+    @media screen and (max-width:  700px) {
+        width: 80vw;
+        padding: 0px;
+        padding-top: 20px;
+        min-height: 95vh;
 
 
-    .signin-page-titlebox{
+    }
+
+
+    .delete-profile-page-titlebox{
+
+        margin-bottom: 20px;
 
         @media screen and (max-width: 800px){
             max-width: 500px;
@@ -31,7 +39,7 @@
         }
     
 
-        .signin-page-titlebox-title{
+        .delete-profile-page-titlebox-title{
             display: block;
             margin-bottom: 20px;
             font-family: 'Roboto', sans-serif;
@@ -41,23 +49,12 @@
 
         }
 
-        .signin-page-titlebox-descriptor{
+        .delete-profile-page-titlebox-descriptor{
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 18px;
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             color: #7c7c7c;
         }
     }
-
-    .signin-page-forgot{
-        font-family: 'Roboto', sans-serif;
-        text-decoration: underline;
-        cursor: pointer;
-
-        &:hover{
-            color: #E85A4F;
-        }
-    }
-    
 }

@@ -3,7 +3,11 @@ import "./item-preview.styles.scss"
 import ImageCarousel from "../image-carousel/image-carousel.component"
 import Mapbox from "../mapbox/mapbox.component"
 
-const ItemPreview = ({data}) =>{
+import { connect } from "react-redux"
+import { createStructuredSelector } from "reselect"
+import {selectCurrentUser} from "../../redux/user/user.selectors"
+
+const ItemPreview = ({data, user}) =>{
 
    return (
         <div className={"item-preview"}>
@@ -21,6 +25,18 @@ const ItemPreview = ({data}) =>{
                     </div>
                     <div className={"item-preview-details-condition"}>
                         Condition: {data.condition}
+                    </div>
+                    <div className={"item-preview-details-contact"}>
+                        Contact with seller:
+                        {user?
+                            <>
+                                <div className={"item-preview-details-contactinfo"}>Phone: {data.seller.phone}</div>
+                                <div className={"item-preview-details-contactinfo"}>Email: {data.seller.email}</div>
+                            </>:
+                            <div className={"item-preview-details-contactinfo"}>
+                                You have to be signed in to see this
+                            </div>
+                         }
                     </div>
                 </div>
                 <div className={"item-preview-details-description"}>
@@ -45,4 +61,9 @@ const ItemPreview = ({data}) =>{
     )
 }
 
-export default ItemPreview
+const mapStateToProps = createStructuredSelector({
+    user: selectCurrentUser
+})
+
+
+export default connect(mapStateToProps)(ItemPreview)

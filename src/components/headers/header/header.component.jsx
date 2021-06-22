@@ -12,6 +12,7 @@ import HeaderOption from '../../header-option/header-option.component'
 import HeaderLogo from "../../header-logo/header-logo.component"
 import Searchbar from "../../header-searchbar/header-searchbar.component"
 import HeaderCategoriesDropdown from "../../header-categories-dropdown/header-categories-dropdown.component"
+import {signoutFetch} from "./header.fetch.js"
 
 const Header = ({history, additionalCssCLasses, user, setCurrentUser})=>{
 
@@ -23,18 +24,17 @@ const Header = ({history, additionalCssCLasses, user, setCurrentUser})=>{
     }
 
     const handleSignOut = () =>{
-        setCurrentUser(null)
-        window.localStorage.removeItem("token")
-        window.localStorage.removeItem("userId")
+
+        signoutFetch(history, setCurrentUser)
     }
 
     return (
         <div className={`header ${additionalCssCLasses}`}>
             <HeaderLogo/>
             <div className={"header-options"}>
-                <HeaderOption onClick={() =>{history.replace("/all")}}>VIEW ALL</HeaderOption>
+                <HeaderOption onClick={() =>{history.push("/all")}}>VIEW ALL</HeaderOption>
                 <HeaderOption onClick={()=> {toogleCategories()}}>VIEW BY CATEGORY</HeaderOption>
-                <HeaderOption onClick={() =>{history.replace("/new")}}>ADD ITEM </HeaderOption>
+                <HeaderOption onClick={() =>{history.push("/new")}}>ADD ITEM </HeaderOption>
             </div>
 
             {categoriesDropdownHidden? "":
@@ -43,11 +43,12 @@ const Header = ({history, additionalCssCLasses, user, setCurrentUser})=>{
             <Searchbar/>
             {!user?
             <div className={"user-section"}>
-                <HeaderOption onClick={() =>{history.replace("/signin")}}>SIGN IN</HeaderOption>
-                <HeaderOption onClick={() =>{history.replace("/register")}}>REGISTER</HeaderOption>
+                <HeaderOption onClick={() =>{history.push("/signin")}}>SIGN IN</HeaderOption>
+                <HeaderOption onClick={() =>{history.push("/register")}}>REGISTER</HeaderOption>
             </div>
             :
             <div className={"user-section"}>
+                <HeaderOption onClick={() =>{history.push("/profile")}}>PROFILE</HeaderOption>
                 <HeaderOption onClick={()=>{handleSignOut()}} >SIGN OUT</HeaderOption>
             </div>}
         </div>

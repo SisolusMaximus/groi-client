@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom"
 
 
 const ViewMultipleEntry = ({entry, history}) =>(
-    <div onClick={()=>{history.replace(`/${entry._id}`)}} className={"view-multiple-entry"}>
+    <div onClick={()=>{history.push(`/${entry._id}`)}} className={"view-multiple-entry"}>
         <div className="view-multiple-entry-thumbnail"
           style={{backgroundImage: `url(${entry.thumbnail.url})`}}
         />
@@ -15,7 +15,7 @@ const ViewMultipleEntry = ({entry, history}) =>(
                 Category: {entry.category}
             </div>
             <div className={"view-multiple-entry-data-seller"}>
-                Seller: placeholder_text_for_now
+                Seller: {entry.seller.username}
             </div>
             <div className={"view-multiple-entry-data-seller"}>
                 Condition: {entry.condition}

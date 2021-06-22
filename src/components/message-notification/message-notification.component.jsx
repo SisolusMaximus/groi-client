@@ -27,7 +27,6 @@ const MessageNotification = ({setCurrentMessage, message}) =>{
     return(
     <div>{message?
         <div className={currentPath === "/"? "message-notification homepage-msg": "message-notification" }>
-            {console.log(message)}
             <WarningIcon/><span className="message-notification-text">{message}</span>
             <span onClick={()=>{handleMessageClose(null)}} className="message-notification-button" >x</span>
         </div>:

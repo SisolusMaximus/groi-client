@@ -9,6 +9,7 @@ const FailurePage = () => {
     const message = ["", ""]
 
     const setMessage = (response) =>{
+        console.log(response)
         if (response.error.message.includes("Failed to fetch")){
             message[0] = "Failed to connect to server."
             message[1] = "Perhaps your internet connection is a problem or servers were blown up"

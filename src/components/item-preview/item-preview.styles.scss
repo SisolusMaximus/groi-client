@@ -53,6 +53,11 @@
 
         @media screen and (max-width:850px) {
             flex-direction: column;
+            margin: 0 20px;
+        }
+
+        @media screen and (max-width:450px) {
+            margin: 0 10px;
         }
 
         .item-previev-details-section{
@@ -60,12 +65,27 @@
             .item-preview-details-price{
                 margin: 0;
                 padding-bottom: 10px;
-                font-size: 22px;
+                font-size: 24px;
             }
             .item-preview-details-condition{
                 margin: 0;
                 padding-bottom: 10px;
-                font-size: 16px;
+                font-size: 20px;
+
+                
+            }
+
+            .item-preview-details-contact{
+                margin-top: 15px;
+                background-color: aliceblue;
+                padding: 10px;
+                border-radius: 5px ;
+
+                .item-preview-details-contactinfo{
+                    margin: 0;
+                    margin: 15px 0;
+                    font-size: 16px;
+                }
             }
         }
     
@@ -80,7 +100,8 @@
                 margin-top: 20px;
                 border-left: none;
                 border-top: 1px solid #d3cdcd;
-                padding-left: 0;;
+                padding-left: 0;
+                justify-content: space-between;
             }
 
             @media screen and (max-width:500px) {
@@ -115,5 +136,6 @@
         padding: 20px;
         border-top: 1px solid #d3cdcd;
         border-bottom: 1px solid #d3cdcd;
+        word-wrap: break-word; 
     }
 }
