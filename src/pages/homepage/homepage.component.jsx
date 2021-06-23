@@ -10,7 +10,15 @@ const Homepage = ({history}) =>{
     return(
         <div className={"homepage"}>
             <div className="homepage-content">
-                <p className="homepage-content-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et sapien imperdiet ante sodales condimentum. Quisque tincidunt molestie metus quis iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque eros, feugiat nec dui sagittis, hendrerit tempor augue. Mauris consectetur nulla a condimentum condimentum. Curabitur vitae hendrerit sem.</p>
+                <p className="homepage-content-lorem">
+                Welcome to GROI!
+                </p>
+                <p className="homepage-content-lorem">
+                It's a site with local announcements where you can search for items that interest you and easily contact with the seller. Also you can post your own offers for free.   
+                </p>
+                <p className="homepage-content-lorem">
+                This is a student project. Please, don't take offers posted on this site seriously :)
+                </p>
                 <Button onClick={()=> {history.push("/all")}} color={"white"}>Start Exploring</Button>
             </div>
         </div>

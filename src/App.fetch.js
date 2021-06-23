@@ -15,7 +15,6 @@ export const fetchUserApp = (setCurrentUser, setCurrentMessage) =>{
     .then((res) => {
         const {result} = res
         if (result.success === true){
-            console.log("Success: ", result)
             setCurrentUser(result.data)
             setCurrentMessage(null)
         } else if (result.success === false){

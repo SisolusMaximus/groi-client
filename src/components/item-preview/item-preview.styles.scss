@@ -4,9 +4,29 @@
     background-color: white;
     border-radius: 10px;
     margin-bottom: 50px;
+    position: relative;
 
     @media screen and (max-width: 700px) {
         width: 95%;
+    }
+
+    .item-preview-icon{
+        max-height: 25px;
+        max-width: 25px;
+        cursor: pointer;
+        opacity: 0.5;
+        user-select: none; /* supported by Chrome and Opera */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        position: absolute;
+        right: 40px;
+        top: 40px;
+
+        &:hover{
+            opacity: 1;
+        }
     }
 
     .item-preview-title{

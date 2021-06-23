@@ -29,13 +29,11 @@ const ResetPasswordForm = ({history, setCurrentMessage}) =>{
     const [disableButton, setDisableButton] = useState(true)
 
     const prevState = useLocation().state
-
     let username = undefined
 
     if (prevState){
         username = prevState.username
     }
-
     useEffect(() => {
         if (Object.values(validationObject).includes(false)){
             setDisableButton(true)
@@ -52,7 +50,6 @@ const ResetPasswordForm = ({history, setCurrentMessage}) =>{
         if(username){
             formData.append("username", username)
         }
-
         resetPasswordFetch(formData, history, setCurrentMessage)
     }
 

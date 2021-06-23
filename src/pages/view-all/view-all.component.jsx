@@ -29,8 +29,6 @@ const ViewAllPage = () =>{
 				)
 				.then((response) => response.json())
 				.then((result) => {
-					console.log('Success:', result);
-					console.log(result.data.length)
 					if (result.error){
 						failureResponseObject.error = result.error
 						history.replace("/failure" , {res: failureResponseObject})

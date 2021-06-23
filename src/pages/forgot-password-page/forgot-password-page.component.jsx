@@ -28,7 +28,7 @@ const ForgotPasswordPage = () =>{
         const formData = new FormData()
         formData.append("username" , state)
         sendVerificationMessage(formData, history, "/user/sendVerificationMessageResetPassword")
-        history.replace("/profile/resetPassword", {username: state})
+        history.push("/profile/resetPassword", {username: state})
     }
 
     return(

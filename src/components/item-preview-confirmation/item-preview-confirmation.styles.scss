@@ -1,0 +1,33 @@
+.item-preview-confirmation{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.95;
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+
+    .item-preview-confirmation-content{
+        position: absolute;
+        top: 28%;
+        background-color: #ffffff;
+        border-radius: 6px;
+        z-index: 999;
+        min-width: 300px;
+        opacity: 1;
+
+        .item-preview-confirmation-content-text{
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .item-preview-content-buttons{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+    
+}

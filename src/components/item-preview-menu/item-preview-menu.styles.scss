@@ -1,0 +1,29 @@
+.item-preview-menu{
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 100px;
+    background-color: #c0bfbf;
+    position: absolute;
+    right: 40px;
+    top:  80px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 998;
+
+    .item-preview-menu-option{
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        width: 65%;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 5px;
+
+        &:hover{
+            background-color: aliceblue;
+        }
+    }
+}
