@@ -29,7 +29,7 @@ const NewItemPage = ({user, history, setCurrentMessage}) =>{
         <div className={"new-item-page"}>
             <div className={"new-item-page-titlebox"}>
                 <span className={"new-item-page-titlebox-title"}>
-                    List your item
+                    Post your offer
                 </span>
                 <span className={"new-item-page-titlebox-descriptor"}>
                     Use form below to fill information about item that you want to sell.

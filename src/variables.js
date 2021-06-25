@@ -1,5 +1,7 @@
 let _api_url
-if (process.env.NODE_ENV === "development"){
+if (process.env.NODE_ENV === "production"){
+   _api_url = "https://nameless-dusk-38072.herokuapp.com"
+} else {
    _api_url = "http://192.168.8.109:3001";
 }
 
