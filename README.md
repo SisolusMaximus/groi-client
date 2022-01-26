@@ -7,10 +7,10 @@ GROI is my personal project built as a final project of one of the subjects duri
 
 ## Tech stack
 
-Programing languages: Javascript
-Front-end: React, Redux, React-router
-Back-end: Node.JS, Express
-Databases: Mongo.DB, Redis
-External services: Gmail API, Coudinary CDN, Mapbox
-Deployed on: Heroku
-Link to source code: [Client](https://github.com/lukbast/groi-client)  [API](https://github.com/lukbast/groi-API)
+#### Programing languages: Javascript
+#### Front-end: React, Redux, React-router
+#### Back-end: Node.JS, Express
+#### Databases: Mongo.DB, Redis
+#### External services: Gmail API, Coudinary CDN, Mapbox
+#### Deployed on: Heroku
+#### Link to source code: [Client](https://github.com/lukbast/groi-client)  [API](https://github.com/lukbast/groi-API)
